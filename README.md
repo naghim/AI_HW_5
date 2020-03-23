@@ -1,5 +1,6 @@
-# AI_HW_3
-Mesterséges Intelligencia házi feladat #2
+# AI_HW_5
+
+Mesterséges Intelligencia házi feladat #5
 _Perceptrons_
 
 The __readme__ is also available in English [here](#tasks).
