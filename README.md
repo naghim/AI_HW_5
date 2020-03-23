@@ -1,14 +1,15 @@
 # AI_HW_5
 
 Mesterséges Intelligencia házi feladat #5
+
 _Perceptrons_
 
 The __readme__ is also available in English [here](#tasks).
 
 ## Feladatok
-AND függvény megtanítása perceptronnak. 
-  * [ ] Tantítás
-  * [ ] Döntési felület kirajzolása  
+AND logikai függvény/kapu megtanítása perceptronnak. 
+  * [x] Tantítás
+  * [x] Döntési felület kirajzolása  
   
 H, I betűk megtanítása perceptronnak 3x3-as képek esetén
   * [x] H, I betűk megtanítása
@@ -18,10 +19,12 @@ A háló szépen megtanulja a betűket, illetve pár módosított betűt is feli
 
 A programok Python nyelven lettek írva, 3.7-es verzióval.
 
+![Example1](https://github.com/naghim/AI_HW_5/blob/master/example1.PNG)
+
 ## Tasks
-Teach AND function to a perceptron.
-  * [ ] Teaching
-  * [ ] Drawing the decision surface
+Teach AND logic gate to a perceptron.
+  * [x] Teaching
+  * [x] Drawing the decision surface
   
 Teach H, I letters to a perceptron (3x3 images)
   * [x] Teaching H, I
