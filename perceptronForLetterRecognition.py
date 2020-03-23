@@ -76,10 +76,10 @@ def evaluate(data, weights, results):
 
 # Main
 def main():
-    letter_H = [1, 0, 1, 1, 1, 1, 1, 0, 1]
-    letter_I = [0, 1, 0, 0, 1, 0, 0, 1, 0]
-    letter_O = [1, 1, 1, 1, 0, 1, 1, 1, 1]
-    letter_T = [1, 1, 1, 0, 1, 0, 0, 1, 0]
+    letter_H = [1, 0, 1, 1, 1, 1, 1, 0, 1, 1]
+    letter_I = [0, 1, 0, 0, 1, 0, 0, 1, 0, 1]
+    letter_O = [1, 1, 1, 1, 0, 1, 1, 1, 1, 1]
+    letter_T = [1, 1, 1, 0, 1, 0, 0, 1, 0, 1]
 
     data = np.array([letter_H, letter_I, letter_O, letter_T])
     results = np.array([[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]])
@@ -91,12 +91,12 @@ def main():
     evaluate(data, weights, results)
 
     print("Testing for modified letters...")
-    letter_H_modif = [1, 0, 1, 1, 0, 1, 1, 0, 1]
-    letter_I_modif = [1, 1, 0, 0, 1, 0, 0, 1, 0]
-    letter_O_modif = [1, 0, 1, 1, 0, 1, 1, 0, 1]
-    letter_T_modif = [1, 1, 1, 0, 0, 0, 0, 1, 0]
+    letter_H_modif = [1, 0, 1, 1, 0, 1, 1, 0, 1, 1]
+    letter_I_modif = [1, 1, 0, 0, 1, 0, 0, 1, 0, 1]
+    letter_O_modif = [1, 0, 1, 1, 0, 1, 1, 0, 1, 1]
+    letter_T_modif = [1, 1, 1, 0, 0, 0, 0, 1, 0, 1]
 
-    # Recognising not full letters
+    # Recognising incomplete letters
     data = np.array([letter_H_modif, letter_I_modif, letter_O_modif, letter_T_modif])
     evaluate(data, weights, results)
 
