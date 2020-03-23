@@ -1,2 +1,31 @@
-# AI_HW_5
-Perceptron
+# AI_HW_3
+Mesterséges Intelligencia házi feladat #2
+_Perceptrons_
+
+The __readme__ is also available in English [here](#tasks).
+
+## Feladatok
+[] AND függvény megtanítása perceptronnak. 
+  - [] Tantítás
+  - [] Döntési felület kirajzolása  
+  
+[] H, I betűk megtanítása perceptronnak 3x3-as képek esetén
+  - [] H, I betűk megtanítása
+  - [] opcionális: T, O betűk megtanítása
+  
+A háló szépen megtanulja a betűket, illetve pár módosított betűt is felismer, mint például a T-t, ha hiányzik a felső vonal középső pixele, Az O-t, ha hiányzik a középső sáv pixelei stb. A pontossága állítható az `error_rate` változóval.
+
+A programok Python nyelven lettek írva, 3.7-es verzióval.
+
+## Tasks
+[] Teach AND function to a perceptron.
+   - [] Teaching
+   - [] Drawing the decision surface
+  
+[] Teach H, I letters to a perceptron (3x3 images)
+   - [] Teaching H, I
+   - [] Optional: Teach T and O 
+  
+The network learns the letters well and recognizes a few modified letters, such as T if the pixel in the horizontal line is missing, O if the pixels are missing in the 2nd row, and so on. The accuracy can be adjusted with the `error_rate` variable.
+
+The programs are written in Python, version 3.7.
