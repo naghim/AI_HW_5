@@ -2,9 +2,9 @@ import random
 import numpy as np
 
 
-# Helper function. ReLu function.
-def relu(value):
-    return value if value > 0 else 0
+# Helper function. Activation function.
+def step_function(value):
+    return 1 if value > 0 else 0
 
 
 # Trains the network.
@@ -17,16 +17,16 @@ def train(data, results):
     weights_4 = np.random.randn(n, 1)
 
     error = 1
-    error_rate = 0.00000001
+    error_rate = 0
 
     while error > error_rate:
         error = 0
 
         for i in range(N):
-            first_neuron = relu(np.dot(data[i], weights_1))
-            second_neuron = relu(np.dot(data[i], weights_2))
-            third_neuron = relu(np.dot(data[i], weights_3))
-            fourth_neuron = relu(np.dot(data[i], weights_4))
+            first_neuron = step_function(np.dot(data[i], weights_1))
+            second_neuron = step_function(np.dot(data[i], weights_2))
+            third_neuron = step_function(np.dot(data[i], weights_3))
+            fourth_neuron = step_function(np.dot(data[i], weights_4))
 
             iter_error1 = results[0][i] - first_neuron
             iter_error2 = results[1][i] - second_neuron
@@ -52,15 +52,7 @@ def train(data, results):
     return np.array([weights_1, weights_2, weights_3, weights_4])
 
 
-# Custom floor function for arrays; somehow np.floor() just couldn't do what I expected.
-def floor_array(array):
-    ret_arr = []
-    for i in range(len(array)):
-        ret_arr.append(1) if array[i] >= 0.5 else ret_arr.append(0)
-
-    return np.array(ret_arr)
-
-
+# Evaluates the network.
 def evaluate(data, weights, results):
     N, n = data.shape
     letter_to_idx = {
@@ -71,12 +63,12 @@ def evaluate(data, weights, results):
     }
 
     for i in range(N):
-        first_neuron = relu(np.dot(data[i], weights[0]))
-        second_neuron = relu(np.dot(data[i], weights[1]))
-        third_neuron = relu(np.dot(data[i], weights[2]))
-        fourth_neuron = relu(np.dot(data[i], weights[3]))
+        first_neuron = step_function(np.dot(data[i], weights[0]))
+        second_neuron = step_function(np.dot(data[i], weights[1]))
+        third_neuron = step_function(np.dot(data[i], weights[2]))
+        fourth_neuron = step_function(np.dot(data[i], weights[3]))
 
-        nn_result = floor_array(np.array([first_neuron, second_neuron, third_neuron, fourth_neuron]))
+        nn_result = np.array([first_neuron, second_neuron, third_neuron, fourth_neuron])
         expected_output = np.array([results[0][i], results[1][i], results[2][i], results[3][i]])
         if np.array_equal(expected_output, nn_result):
             print("Letter recognised as", letter_to_idx[i])
