@@ -25,7 +25,7 @@ Teach AND function to a perceptron.
 Teach H, I letters to a perceptron (3x3 images)
   * [x] Teaching H, I
   * [x] Optional: Teach T and O 
-  
+
 The network learns the letters well and recognizes a few modified letters, such as T if the pixel in the horizontal line is missing, O if the pixels are missing in the 2nd row, and so on. The accuracy can be adjusted with the `error_rate` variable.
 
 The programs were written in Python, version 3.7.
